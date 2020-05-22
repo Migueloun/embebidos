@@ -1,3 +1,4 @@
+import sys
 import os, os.path
 import random
 import string
@@ -67,5 +68,9 @@ if __name__ == '__main__':
     webapp = Index()
     webapp.menu = MenuWebService()
     webapp.detalle = Detalle()
-    webapp.detalleDeBebida = DetalleDeBebida()
+    webapp.detalleDeBebida = DetalleDeBebida()        
+    cherrypy.config.update({
+        'server.socket_host' : str(sys.argv[1]),
+        'server.socket_port' : 8080,
+    })
     cherrypy.quickstart(webapp, '/', conf)
