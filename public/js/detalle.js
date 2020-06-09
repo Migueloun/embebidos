@@ -14,26 +14,44 @@ function getUrlParam(parameter, defaultvalue){
     return urlparameter;
 }
 
-$(document).ready(function() {
+$(document).ready(function() {    
     $.ajax({url: "/detalleDeBebida", type:"get", data: { id: getUrlParam("id", 0)}, 
-        success: function(data, status) {
+        success: function(data, status) {            
             console.log(status);
             console.log(data);  
             data = JSON.parse(data);          
-            $("#bebida").append(htmlDeBebida(data.bebida_id, data.nombre, data.tiene_alcohol));
+            $("#bebida").append(htmlDeBebida(data.bebida_id, data.nombre, data.descripcion, data.tiene_alcohol));
         }     
     });
 });  
   
-  function htmlDeBebida(id, nombre, tiene_alcohol) {
+function htmlDeBebida(id, nombre, descripcion, tiene_alcohol) {
     return `    
-        <div class="jumbotron">
-            <h1 class="display-4">${nombre}</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>${(tiene_alcohol)?"Esta bebida contiene alcohol":""}</p>
-            <button class="btn btn-success btn-lg" role="button">Ordenar</button>
-        </div>`;  
-  }
+    <div class="jumbotron">
+        <h1 class="display-4">${nombre}</h1>
+        <p class="lead">${descripcion}</p>
+        <hr class="my-4">
+        <p>${(tiene_alcohol)?"Esta bebida contiene alcohol":""}</p>
+        <button onclick="OrdenarBebida(${id})" class="btn btn-success btn-lg" role="button">Ordenar</button>
+    </div>`;  
+}
+
+function OrdenarBebida(id) {
+    $.ajax({url: "/ordenarBebida", type:"get", data: { id: id }, 
+        success: function(data, status) {            
+            console.log(status);
+            console.log(data);    
+            if (data === "La bebida se agregó correctamente a la fila") {
+                $("#bebida").append(`<div class="alert alert-success" role="alert">
+                                        ${data} 
+                                     </div>`);
+            } else {
+                $("#bebida").append(`<div class="alert alert-danger" role="alert">
+                                        ${data} 
+                                     </div>`);
+            }            
+        }     
+    });
+}
   
   

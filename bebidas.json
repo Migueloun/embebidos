@@ -1,0 +1,229 @@
+{
+    "bebidas": [
+        {
+            "id": 0,
+            "nombre": "Paloma",
+            "descripcion": "No usamos palomas de verdad jajaja saludos",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 0,
+                        "nombre": "Toronja",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 1,
+                        "nombre": "Tequila",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "nombre": "Charro Negro",
+            "descripcion": "Persona de color vestida de mariachi",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 2,
+                        "nombre": "Coca",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 1,
+                        "nombre": "Tequila",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Paloma Fit",
+            "descripcion": "Paloma que come pura tortilla integral",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 3,
+                        "nombre": "Sprite",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 1,
+                        "nombre": "Tequila",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Vodka Limon",
+            "descripcion": "Refrescante mezcla de nuestro mejor vodka con un ligero toque de gaseosa sabor limón",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 3,
+                        "nombre": "Sprite",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 4,
+                        "nombre": "Vodka",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "VodkaT",
+            "descripcion": "Animate a probar lo desconocido y prueba el delicioso vodka de raspberry con un toque de gaseosa de toronja",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 0,
+                        "nombre": "Toronja",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 4,
+                        "nombre": "Vodka",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "VodkaC",
+            "descripcion": "Algo nunca antes visto, ánimate a probar nuestra mezlca de vodka con gaseosa de cola",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 2,
+                        "nombre": "Coca",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 4,
+                        "nombre": "Vodka",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Cuba",
+            "descripcion": "Sin comunismo",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 2,
+                        "nombre": "Coca",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 5,
+                        "nombre": "Ron",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "Ron Limon",
+            "descripcion": "Deliciosa mezcla de nuestro mejor ron con gaseosa sabor limón",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 3,
+                        "nombre": "Sprite",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 5,
+                        "nombre": "Ron",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "RonT",
+            "descripcion": "Deliciosa mezcla de nuestro mejor ron con gaseosa sabor toronja",
+            "ingredientes": [
+                {
+                    "cantidad_en_ml": 300,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 0,
+                        "nombre": "Toronja",
+                        "tiene_alcohol": false
+                      }
+                },
+                {
+                    "cantidad_en_ml": 120,
+                    "materia_prima":
+                      {
+                        "materia_prima_id": 5,
+                        "nombre": "Ron",
+                        "tiene_alcohol": true
+                      }
+                }
+            ]
+        }
+    ]
+}
