@@ -98,12 +98,12 @@ if __name__ == '__main__':
         '/menu': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/fila': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/niveles': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
@@ -116,13 +116,12 @@ if __name__ == '__main__':
         },
         '/estadisticas': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
-            'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.on': True,            
         },
         '/obtenerEstadisticas': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/detalle': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
@@ -131,17 +130,17 @@ if __name__ == '__main__':
         '/detalleDeBebida': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/ordenarBebida': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/siguienteEnFila': {
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain')],
+            'tools.response_headers.headers': [('Content-Type', 'text/plain')]
         },
         '/static': {
             'tools.staticdir.on': True,
