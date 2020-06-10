@@ -26,7 +26,7 @@ wiringpi.pinMode(22, 1)
 wiringpi.digitalWrite(22, 1)
 
 while(True):  
-    if(wiringpi.digitalRead(21) == 1):        
+    if(wiringpi.digitalRead(21) == 0):        
         wiringpi.digitalWrite(22, 0)
         r = requests.get(host_port + "/siguienteEnFila")
         print(r.status_code)
@@ -45,7 +45,7 @@ while(True):
             for ingrediente in bebida_a_preparar.ingredientes:
                 ingrediente.suministrar_ingrediente()            
 
-            while(wiringpi.digitalRead(21) == 1):                
+            while(wiringpi.digitalRead(21) == 0):                
                 pass
 
             wiringpi.digitalWrite(22, 1)
@@ -53,7 +53,7 @@ while(True):
             
         except:
             print("No hay bebida enfilada. Esperar 5 segundos")
-            while(wiringpi.digitalRead(21) == 1):                
+            while(wiringpi.digitalRead(21) == 0):                
                 pass          
 
             wiringpi.digitalWrite(22, 1)
