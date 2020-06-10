@@ -11,21 +11,21 @@ $(document).ready(function() {
     });
   });
 
-  // $.get("/fila", function(data, status) {
-  //   console.log(status);
-  //   console.log(data);
+  $.get("/fila", function(data, status) {
+    console.log(status);
+    console.log(data);
 
-  //   data = JSON.parse(data);
-  //   if(data.length > 0) {
-  //     $("#fila-container").attr('class', 'd-block');
-  //     data.forEach(bebida => {
-  //       $("#fila").append( 
-  //         htmlDeFila(bebida.nombre)
-  //       );
-  //     });
-  //   }
+    data = JSON.parse(data);
+    if(data.length > 0) {
+      $("#fila-container").attr('class', 'd-block');
+      data.forEach(bebida => {
+        $("#fila").append( 
+          htmlDeFila(bebida.nombre)
+        );
+      });
+    }
     
-  // });
+  });
 
   setInterval(function () {
     $.get("/fila", function(data, status) {
