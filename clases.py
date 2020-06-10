@@ -61,10 +61,11 @@ class Materia_prima:
   def LeerSensor(self):    
     mensaje = bytes('M', 'utf-8')
     arduino.write(mensaje)
-    datos_no_formateados = arduino.readline().strip(",")
+    datos_no_formateados = arduino.readline().strip()
     datos_formateados = datos_no_formateados.decode("utf-8")
-    print('Valor del sensor:', int(datos_formateados[self.materia_prima_id]))
-    return int(datos_formateados[self.materia_prima_id])   
+    arreglo = datos_formateados.split(",")
+    print('Valor del sensor:', int(arreglo[self.materia_prima_id]))
+    return int(arreglo[self.materia_prima_id])   
 
   def obtener_cantidad_total(self):
     print("Leyendo el sensor:", str(self.materia_prima_id))
