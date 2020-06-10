@@ -26,28 +26,30 @@ $(document).ready(function() {
     }
     
   });
+
+  while (true) {
+    setTimeout(function () {
+      $.get("/fila", function(data, status) {
+        console.log(status);
+        console.log(data);
+    
+        data = JSON.parse(data);
+        if(data.length > 0) {
+          $("#fila-container").attr('class', 'd-block');
+          $("#fila").html("");
+          data.forEach(bebida => {
+            $("#fila").append( 
+              htmlDeFila(bebida.nombre)
+            );
+          });
+        }
+        
+      });
+    }, 5000);
+  }
 });
 
-while (true) {
-  setTimeout(function () {
-    $.get("/fila", function(data, status) {
-      console.log(status);
-      console.log(data);
-  
-      data = JSON.parse(data);
-      if(data.length > 0) {
-        $("#fila-container").attr('class', 'd-block');
-        $("#fila").html("");
-        data.forEach(bebida => {
-          $("#fila").append( 
-            htmlDeFila(bebida.nombre)
-          );
-        });
-      }
-      
-    });
-  }, 5000);
-}
+
 
 
 function htmlDeBebida(id, nombre, descripcion, tiene_alcohol) {
