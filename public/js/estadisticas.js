@@ -20,10 +20,7 @@ $(document).ready(function() {
           <a href="/detalle?id=${id}">
             <img src="static/img/${id}.png" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">${nombre}</h5>
-              <h6>${(tiene_alcohol)?"Bebida alcohólica":""}</h6>
-              <p class="card-text">${descripcion}</p>
-              <a class="btn btn-sm btn-primary" href="/detalle?id=${id}">Ordenar</a>
+              <h5 class="card-title">${nombre}</h5>              
             </div>
           </div>
           </a>
