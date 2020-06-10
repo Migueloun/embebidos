@@ -4,6 +4,8 @@ import random
 import string
 import json
 
+from collections import deque 
+
 import cherrypy
 
 from clases import *
@@ -83,7 +85,7 @@ class ObtenerEstadisticas(object):
 class SiguienteEnFila(object):
     def GET(self):
         if (len(queue_de_bebidas) > 0):
-            return json.dumps(queue_de_bebidas.pop(), default=to_serializable)    
+            return json.dumps(queue_de_bebidas.popleft(), default=to_serializable)    
         
         return None
 
@@ -151,7 +153,7 @@ if __name__ == '__main__':
     bebidas_disponibles = Obtener_bebidas_de_archivo()
 
     # Representa la fila de bebidas
-    queue_de_bebidas = []
+    queue_de_bebidas = deque()
 
     # Esta lista representa las bebidas que se han surtido
     historial_de_bebidas = []

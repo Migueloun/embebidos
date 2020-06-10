@@ -1,5 +1,7 @@
 import json
 import serial
+import time
+import wiringpi as wiringpi
 
 arduino = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=3.0)
 
@@ -49,8 +51,17 @@ class Ingrediente:
     return self.Materia_prima.obtener_cantidad_total() > self.cantidad_en_ml      
 
   def suministrar_ingrediente(self):
-    print("Suministrando al actuador:", str(self.Materia_prima.materia_prima_id))
-    print("Cantidad:", str(self.cantidad_en_ml))    
+    prima_id = self.Materia_prima.materia_prima_id
+    cantidad = self.cantidad_en_ml
+    print("Suministrando al actuador:", str(prima_id))
+    print("Cantidad:", str(cantidad))
+
+    wiringpi.digitalWrite(prima_id, 1)
+    delay = (cantidad*5)/300
+    time.sleep(delay)
+    wiringpi.digitalWrite(prima_id, 0)
+    
+    
 
 class Materia_prima:
   def __init__(self, materia_prima_id, nombre, tiene_alcohol):
@@ -69,7 +80,7 @@ class Materia_prima:
 
   def obtener_cantidad_total(self):
     print("Leyendo el sensor:", str(self.materia_prima_id))
-    #return 1000
+    #return 0
     return self.LeerSensor()
 
   
