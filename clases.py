@@ -67,7 +67,7 @@ class Materia_prima:
   def obtener_cantidad_total(self):
     print("Leyendo el sensor:", str(self.materia_prima_id))
     #return 1000
-    return LeerSensor()
+    return self.LeerSensor()
 
   
      
