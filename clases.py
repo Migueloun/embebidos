@@ -59,7 +59,7 @@ class Materia_prima:
     self.tiene_alcohol = tiene_alcohol  
 
   def LeerSensor(self):    
-    mensaje = bytes("M", 'utf-8')
+    mensaje = bytes('M', 'utf-8')
     arduino.write(mensaje)
     datos_no_formateados = arduino.readline().strip(",")
     datos_formateados = datos_no_formateados.decode("utf-8")
