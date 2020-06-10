@@ -48,7 +48,7 @@ while(True):
             while(wiringpi.digitalRead(21) == 1):                
                 pass
 
-            wiringpi.digitalWrite(22, 0)
+            wiringpi.digitalWrite(22, 1)
             
             
         except:
@@ -56,6 +56,6 @@ while(True):
             while(wiringpi.digitalRead(21) == 1):                
                 pass          
 
-            wiringpi.digitalWrite(22, 0)
+            wiringpi.digitalWrite(22, 1)
 
 
