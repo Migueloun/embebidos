@@ -45,7 +45,7 @@ while(True):
             for ingrediente in bebida_a_preparar.ingredientes:
                 ingrediente.suministrar_ingrediente()            
 
-            while(wiringpi.digitalRead(21) == 0):                
+            while(wiringpi.digitalRead(21) == 1):                
                 pass
 
             wiringpi.digitalWrite(22, 0)
@@ -53,7 +53,7 @@ while(True):
             
         except:
             print("No hay bebida enfilada. Esperar 5 segundos")
-            while(wiringpi.digitalRead(21) == 0):                
+            while(wiringpi.digitalRead(21) == 1):                
                 pass          
 
             wiringpi.digitalWrite(22, 0)
