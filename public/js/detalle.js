@@ -45,6 +45,7 @@ function OrdenarBebida(id) {
                 $("#bebida").append(`<div class="alert alert-success" role="alert">
                                         ${data} 
                                      </div>`);
+                window.location = "/";
             } else {
                 $("#bebida").append(`<div class="alert alert-danger" role="alert">
                                         ${data} 

@@ -1,7 +1,7 @@
 import json
 import serial
 
-#arduino = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=3.0)
+arduino = serial.Serial("/dev/ttyACM0", baudrate=9600, timeout=3.0)
 
 #Clases: Bebida, Ingrediente y Materia_prima
 class Bebida:
@@ -45,8 +45,8 @@ class Ingrediente:
     return str(self.cantidad_en_ml) + " ml de " + self.Materia_prima.nombre
 
   def hay_suficiente(self):
-    return True
-    #return self.Materia_prima.obtener_cantidad_total() > self.cantidad_en_ml      
+    
+    return self.Materia_prima.obtener_cantidad_total() > self.cantidad_en_ml      
 
   def suministrar_ingrediente(self):
     print("Suministrando al actuador:", str(self.Materia_prima.materia_prima_id))
@@ -58,17 +58,23 @@ class Materia_prima:
     self.nombre = nombre    
     self.tiene_alcohol = tiene_alcohol  
 
+  def LeerSensor(self):
+    datos_no_formateados = arduino.readLine().strip(",")
+    datos_formateados = datos_no_formateados.decode("utf-8")
+    print('Valor del sensor:', int(datos_formateados[self.materia_prima_id]))
+    return int(datos_formateados[self.materia_prima_id])   
+
   def obtener_cantidad_total(self):
     print("Leyendo el sensor:", str(self.materia_prima_id))
-    #return LeerSensor()
+    #return 1000
+    return LeerSensor()
 
-  def LeerSensor(self):
-    pass
-    #datos_no_formateados = arduino.readLine().strip(",")
-    #datos_formateados = datos_no_formateados.decode("utf-8")
-    #print('Valor del sensor:', int(datos_formateados[self.materia_prima_id]))
-    #return int(datos_formateados[self.materia_prima_id])    
-
+  
+     
+class Materia_prima_nivel:
+   def __init__(self, nombre, nivel):    
+    self.nombre = nombre    
+    self.nivel = nivel
 
 # Funciones de utilidades
 
