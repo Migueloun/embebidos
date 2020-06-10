@@ -44,6 +44,7 @@ class OrdenarBebida(object):
                 # Agregar bebida a la fila de bebidas
                 if(bebida.hay_ingredientes()):
                     queue_de_bebidas.append(bebida)
+                    historial_de_bebidas.append(bebida)
                     print(queue_de_bebidas)
                     return "La bebida se agregó correctamente a la fila"
                 return "No hay suficientes ingredientes para preparar tu bebida"                
@@ -78,8 +79,7 @@ class Estadisticas(object):
 @cherrypy.expose
 class ObtenerEstadisticas(object):    
     def GET(self):      
-        reversed_queue = reversed(queue_de_bebidas)                      
-        return json.dumps(list(reversed_queue), default=to_serializable)
+        return json.dumps(historial_de_bebidas, default=to_serializable)        
 
 @cherrypy.expose
 class SiguienteEnFila(object):
